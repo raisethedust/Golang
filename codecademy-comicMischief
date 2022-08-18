@@ -1,0 +1,36 @@
+package main
+
+import "fmt"
+import "time" // added time for an extra variable
+
+func main () {
+  var publisher, writer, artist, title string
+  var year, pageNumber uint
+  var grade float32
+  
+  title = "Mr. GoToSleep"
+  writer = "Tracey Hatchet"
+  artist = "Jewel Tampson"
+  publisher = "DizzyBooks Publishing Inc."
+  year = 1997
+  pageNumber = 14
+  grade = 6.5
+  t := time.Now() // used for collectors value variable, to extract the present year and keep the code updated
+  collectorsValue := (float32(t.Year())-float32(year))*float32(pageNumber)*grade/100 // This is a made up value, which takes the year we are in and subtracts the year in which the book was made, this value increases with the age of the book. Then we simply multiply this value for the number of pages and its grade. Then I divided it by 100 just to make some sense, as I am a true collecor myself /s.
+
+  fmt.Println(title, "writen by", writer, "drawn by", artist, "published by", publisher, "in", year, "with", pageNumber, "pages.", "Classified as a", grade, "out of 10. Collector's Value:", collectorsValue,"euros.") 
+  fmt.Println()
+  
+  title = "Epic Vol. 1"
+  writer = "Ryan N. Shawn"
+  artist = "Phoebe Paperclips"
+  publisher = "DizzyBooks Publishing Inc."
+  year = 2013
+  pageNumber = 160
+  grade = 9.0
+  collectorsValue = (float32(t.Year())-float32(year))*float32(pageNumber)*grade/100
+
+  fmt.Println(title, "writen by", writer, "drawn by", artist, "published by", publisher, "in", year, "with", pageNumber, "pages.", "Classified as a", grade, "out of 10. Collector's Value:", collectorsValue,"euros.") 
+  fmt.Println()
+  fmt.Println("These values are up-to-date with the present year:", t.Year())
+}
