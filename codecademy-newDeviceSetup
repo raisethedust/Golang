@@ -1,0 +1,20 @@
+package main
+
+import (
+  "fmt"
+)
+
+func main() {
+var name string
+var age int
+  fmt.Println("What is your name?")
+  fmt.Scan(&name)
+  fmt.Println("Hello", name,"!")
+  fmt.Println("What is your age?")
+  fmt.Scan(&age)
+  fmt.Printf("%s is %d years old", name, age)
+  fmt.Println("")
+  newMessage := fmt.Sprintf("%s was born %d years ago", name, age)
+  fmt.Println(newMessage)
+
+ }
